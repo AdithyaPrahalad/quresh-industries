@@ -2,215 +2,241 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quresh Industries | Royal Precision, Modern Power</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quresh Industries — Royal Precision</title>
+  <meta name="description" content="Quresh Industries: Student car-buying advisory. Precision. Trust. Royal Standards." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap');
-
-    /* --- Animated Background --- */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: #f5f5f5;
-      background: linear-gradient(-45deg, #000000, #0b3d2e, #1a1a1a, #d4af37);
-      background-size: 400% 400%;
-      animation: gradient 18s ease infinite;
-      overflow-x: hidden;
+    :root{
+      --green:#0d1f1a;           /* Imperial Green (base) */
+      --green-2:#15352d;         /* Emerald Fade */
+      --gold:#c9a227;            /* Sovereign Gold */
+      --bronze:#8b7a3e;          /* Royal Bronze (soft lines/shadows) */
+      --black:#0b0b0b;           /* Obsidian Black (header/footer) */
+      --ivory:#f7f5e8;           /* Ivory White (copy) */
+      --soft:#e9e5d4;            /* soft ivory accents */
+      --radius:18px;
+      --shadow:0 6px 24px rgba(0,0,0,.22);
+      --gold-glow:0 0 0 1px #8b7a3e inset, 0 0 24px rgba(201,162,39,.25);
     }
 
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1000px 600px at 20% -10%, #122922 0%, transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, #0f261f 0%, transparent 60%),
+        linear-gradient(#0e1f1a,#0c1b16);
+      color:var(--ivory);
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
     }
 
-    /* --- Header --- */
-    header {
-      text-align: center;
-      padding: 100px 20px 80px;
+    /* ===== NAVBAR (sticky tabs) ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(180deg, rgba(11,11,11,.95), rgba(11,11,11,.86));
+      border-bottom:1px solid rgba(139,122,62,.35);
+      backdrop-filter:saturate(130%) blur(4px);
+    }
+    .nav-wrap{max-width:1120px;margin:auto;display:flex;align-items:center;gap:16px;padding:10px 18px}
+    .brand{
+      display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ivory)
+    }
+    .brand-title{
+      font-family:"Playfair Display", serif;font-weight:700;letter-spacing:.5px
+    }
+    .tabs{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .tab{
+      color:var(--soft);text-decoration:none;padding:10px 14px;border-radius:12px;
+      border:1px solid transparent;transition:.2s ease;
+    }
+    .tab:hover,.tab:focus{
+      color:var(--ivory);border-color:rgba(201,162,39,.55);box-shadow:var(--gold-glow)
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      color: #d4af37;
-      text-shadow: 0 0 20px rgba(212,175,55,0.4);
-      margin-bottom: 10px;
+    /* ===== CREST ===== */
+    .crest{
+      width:54px;height:54px;flex:0 0 54px;border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, #fff8 0 1px, transparent 1px),
+                 radial-gradient(circle at 70% 70%, #fff3 0 1px, transparent 1px),
+                 radial-gradient(circle at 50% 50%, rgba(201,162,39,.20), rgba(201,162,39,.05));
+      border:1px solid rgba(201,162,39,.75);
+      box-shadow:0 0 36px rgba(201,162,39,.25) inset, 0 2px 10px rgba(0,0,0,.35);
+      display:grid;place-items:center;
+    }
+    .crest svg{filter:drop-shadow(0 0 6px rgba(201,162,39,.45))}
+
+    /* ===== HERO ===== */
+    .hero{max-width:1100px;margin:42px auto 0;padding:28px 18px 0;text-align:center}
+    .hero h1{
+      font-family:"Playfair Display",serif;font-size:44px;margin:12px 0 8px;
+      color:var(--gold);text-shadow:0 2px 0 #000, 0 0 26px rgba(201,162,39,.35)
+    }
+    .hero p{color:#ddd;max-width:760px;margin:0 auto}
+    .cta{
+      margin-top:22px;display:inline-block;background:linear-gradient(90deg,var(--gold),#a98a1e);
+      color:#111;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;
+      box-shadow:0 6px 18px rgba(201,162,39,.25);transition:.2s
+    }
+    .cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,162,39,.32)}
+    .arch{
+      height:14px;max-width:180px;margin:26px auto 0;border-top:2px solid var(--bronze);
+      border-radius:1000px/40px
     }
 
-    header p {
-      color: #ddd;
-      font-size: 1.1em;
-      letter-spacing: 0.5px;
+    /* ===== SECTIONS ===== */
+    section{max-width:1100px;margin:34px auto;padding:22px 18px}
+    .panel{
+      background:linear-gradient(180deg, rgba(21,40,33,.76), rgba(15,32,27,.82));
+      border:1px solid rgba(139,122,62,.45); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:28px
+    }
+    h2{
+      font-family:"Playfair Display",serif;color:var(--gold);letter-spacing:.2px;margin:0 0 12px
+    }
+    .sub{color:#d9d5c5;margin-top:6px}
+
+    /* ===== CARDS (Packages) ===== */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    @media (max-width:640px){ .grid{grid-template-columns:1fr} }
+    .card{
+      background:linear-gradient(180deg, rgba(16,33,27,.9), rgba(14,28,23,.96));
+      border:1px solid rgba(201,162,39,.35);border-radius:16px;padding:22px;text-align:center;
+      box-shadow:0 0 0 1px rgba(0,0,0,.3) inset;transition:.2s
+    }
+    .card:hover{box-shadow:var(--gold-glow);transform:translateY(-4px)}
+    .card h3{margin:8px 0 8px}
+    .price{color:#0fa36a;font-weight:700;font-size:20px;margin-top:10px}
+
+    /* ===== OFFER STRIP ===== */
+    .offer{
+      margin-top:18px;background:
+        linear-gradient(90deg, rgba(201,162,39,.18), rgba(15,163,106,.14), rgba(201,162,39,.18));
+      border:1px solid rgba(201,162,39,.45);border-radius:14px;padding:14px 16px;text-align:center;
+      color:var(--soft)
+    }
+    .offer b{color:var(--gold)}
+
+    /* ===== CONTACT ===== */
+    .contact a{
+      color:var(--gold);text-decoration:none;font-weight:600
+    }
+    .contact a:hover{text-decoration:underline;color:#10b981}
+    .btn-whatsapp{
+      display:inline-block;margin-top:10px;background:linear-gradient(90deg,#10b981,#0c8a63);
+      color:#07150f;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700
     }
 
-    .button {
-      background: linear-gradient(90deg, #d4af37, #0e7c49);
-      color: #000;
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 25px;
-      font-weight: 600;
-      transition: 0.3s;
+    /* ===== FOOTER ===== */
+    footer{
+      margin-top:40px;background:linear-gradient(180deg, #0c1714, #0a1512);
+      border-top:1px solid rgba(139,122,62,.35);color:#bfbba8
     }
-    .button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #0e7c49, #d4af37);
-      color: #fff;
-    }
-
-    section {
-      max-width: 950px;
-      margin: auto;
-      text-align: center;
-      padding: 60px 25px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 18px;
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      color: #d4af37;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 25px;
-      font-size: 2em;
-    }
-
-    p {
-      line-height: 1.7;
-      color: #ccc;
-      font-size: 1.05em;
-    }
-
-    /* --- Packages --- */
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: rgba(20, 20, 20, 0.9);
-      border: 1px solid #d4af37;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 0 12px rgba(212,175,55,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(212,175,55,0.5);
-    }
-
-    .price {
-      color: #0e7c49;
-      font-weight: 700;
-      font-size: 1.6em;
-      margin-top: 10px;
-    }
-
-    /* --- Royal Offer --- */
-    .offer {
-      background: linear-gradient(90deg, #0e7c49, #d4af37, #0b3d2e);
-      color: #000;
-      padding: 18px;
-      border-radius: 12px;
-      margin: 40px auto;
-      max-width: 700px;
-      font-weight: 600;
-      animation: glow 6s infinite alternate;
-    }
-
-    @keyframes glow {
-      0% { box-shadow: 0 0 8px #0e7c49; }
-      100% { box-shadow: 0 0 18px #d4af37; }
-    }
-
-    /* --- Contact --- */
-    .contact a {
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-      color: #0e7c49;
-    }
-
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 0.9em;
-      padding: 40px 15px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    footer a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-      color: #0e7c49;
-    }
+    .footer-wrap{max-width:1100px;margin:auto;padding:22px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+    .motto{font-style:italic;color:#d7d3c0}
+    .powered a{color:var(--gold);text-decoration:none}
+    .powered a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Quresh Industries</h1>
-  <p>Helping students buy cars smartly, safely, and affordably.</p>
-  <a href="#packages" class="button">Explore Packages</a>
-</header>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>Quresh Industries is a UK-based initiative simplifying the car-buying experience for students and first-time drivers. 
-     We bring precision, trust, and royal standards to every deal — helping you secure the best cars for the best prices.</p>
-</section>
-
-<section id="packages">
-  <h2>Our Packages</h2>
-  <div class="packages">
-    <div class="card">
-      <h3>Quick Pick</h3>
-      <p>We shortlist 3–5 cars within your budget, with checks on mileage, MOT history, and market pricing.</p>
-      <p class="price">£25</p>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="nav">
+    <div class="nav-wrap">
+      <span class="crest" aria-hidden="true">
+        <!-- Inline SVG crest (star & laurel) -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3l1.8 3.9 4.3.5-3.2 2.9.9 4.2L12 12.9 8.2 14.5l.9-4.2L6 7.4l4.3-.5L12 3z" fill="#c9a227"/>
+          <path d="M5 14c-1.2-1.6-1.8-3.4-1.7-5.3 1.7.3 3.1 1.1 4.2 2.4M19 14c1.2-1.6 1.8-3.4 1.7-5.3-1.7.3-3.1 1.1-4.2 2.4" stroke="#c9a227" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <a class="brand" href="#home" aria-label="Quresh Industries">
+        <strong class="brand-title">Quresh Industries</strong>
+      </a>
+      <div class="tabs" role="navigation" aria-label="Primary">
+        <a class="tab" href="#home">Home</a>
+        <a class="tab" href="#about">About</a>
+        <a class="tab" href="#packages">Packages</a>
+        <a class="tab" href="#offers">Offers</a>
+        <a class="tab" href="#contact">Contact</a>
+      </div>
     </div>
-    <div class="card">
-      <h3>Negotiator</h3>
-      <p>Includes Quick Pick plus seller communication, viewing checklist, and negotiation guidance.</p>
-      <p class="price">£80</p>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header id="home" class="hero">
+    <h1>Quresh Industries</h1>
+    <p class="sub">Helping students buy cars smartly, safely, and affordably.</p>
+    <a class="cta" href="#packages">Explore Packages</a>
+    <div class="arch" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="panel">
+      <h2>About Us</h2>
+      <p>
+        Quresh Industries blends British professionalism with Mughal heritage—delivering <b>Precision, Trust, and Royal Standards</b> to every car purchase.
+        We shortlist great-value cars, guide negotiations, and ensure your deal is fair and safe.
+      </p>
     </div>
-    <div class="card">
-      <h3>Full Assist</h3>
-      <p>Complete support: search, negotiation, viewing help, and paperwork assistance — your royal car-buying partner.</p>
-      <p class="price">£250</p>
+  </section>
+
+  <!-- ===== PACKAGES ===== -->
+  <section id="packages">
+    <div class="panel">
+      <h2>Our Packages</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3>Quick Pick</h3>
+          <p>3–5 shortlisted cars within budget, with checks on mileage, MOT history, red flags & pricing notes.</p>
+          <p class="price">£25</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Negotiator</h3>
+          <p>Quick Pick + seller messaging scripts, viewing checklist, and negotiation support to secure the deal.</p>
+          <p class="price">£80</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Full Assist</h3>
+          <p>End-to-end support: search, shortlists, negotiation, viewing help, and guidance through paperwork.</p>
+          <p class="price">£250</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="offer">
-  🎁 Exclusive Offer: Verified YouTube or Instagram followers get <strong>10% OFF</strong> — use code <strong>QURESH10</strong> at checkout!
-</section>
+  <!-- ===== OFFERS ===== -->
+  <section id="offers">
+    <div class="panel">
+      <h2>Royal Offer</h2>
+      <p class="offer">
+        🎁 <b>10% OFF</b> for verified YouTube & Instagram followers — use code <b>QURESH10</b>.
+        (Show your subscribed status at booking. One use per client.)
+      </p>
+    </div>
+  </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>WhatsApp: <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat Now</a></p>
-  <p>Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
-  <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
-</section>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="panel contact">
+      <h2>Contact</h2>
+      <p>WhatsApp: <a href="https://wa.me/44YOURNUMBER" target="_blank" rel="noopener">Chat with Quresh</a></p>
+      <a class="btn-whatsapp" href="https://wa.me/44YOURNUMBER?text=Hi%20Quresh%20Industries%2C%20I%27m%20interested%20in%20your%20car-buying%20packages." target="_blank" rel="noopener">Message on WhatsApp</a>
+      <p style="margin-top:14px">Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank" rel="noopener">@quresh.industries</a></p>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 Quresh Industries — Royal Precision. Modern Power.</p>
-  <p>Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a></p>
-</footer>
-
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="motto">“Precision. Trust. Royal Standards.”</div>
+      <div class="powered">Powered by <a href="https://macrobot.neocities.org" target="_blank" rel="noopener">Macrobot</a></div>
+    </div>
+  </footer>
 </body>
 </html>

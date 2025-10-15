@@ -8,15 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black: #0a0a0a;
-      --dark: #121212;
+      --white: #ffffff;
+      --light: #f7f7f7;
+      --black: #121212;
+      --dark: #1a1a1a;
       --gold: #d4af37;
       --soft-gold: #e2c275;
-      --grey: #565656;
-      --ivory: #f5f5f3;
+      --grey: #333333;
       --emerald: #123a2c;
       --radius: 18px;
-      --shadow: 0 8px 26px rgba(0,0,0,.35);
+      --shadow: 0 8px 26px rgba(0,0,0,.15);
     }
 
     * { box-sizing: border-box; }
@@ -24,17 +25,19 @@
     body {
       margin: 0;
       font-family: Poppins, sans-serif;
-      color: var(--ivory);
-      background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #0a0a0a 100%);
+      background: var(--white);
+      color: var(--black);
       line-height: 1.6;
     }
 
     /* ===== NAVBAR ===== */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,10,10,0.95);
-      border-bottom: 1px solid rgba(212,175,55,0.4);
-      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--gold);
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
     }
     .nav-wrap {
       max-width: 1100px;
@@ -42,115 +45,119 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 18px;
+      padding: 12px 18px;
     }
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: var(--ivory);
+      color: var(--black);
       text-decoration: none;
       font-family: "Playfair Display", serif;
       font-size: 1.3rem;
-      font-weight: 600;
+      font-weight: 700;
     }
     .brand img {
-      height: 42px;
+      height: 40px;
       width: auto;
-      filter: drop-shadow(0 0 4px rgba(212,175,55,0.4));
     }
-
     .tabs {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
     .tab {
-      color: var(--soft-gold);
+      color: var(--black);
       text-decoration: none;
       padding: 10px 14px;
       border-radius: 12px;
       transition: 0.25s;
+      font-weight: 500;
     }
     .tab:hover {
-      background: rgba(212,175,55,0.1);
-      color: var(--ivory);
+      background: var(--gold);
+      color: var(--white);
     }
 
     /* ===== HERO ===== */
     header {
       max-width: 1100px;
-      margin: 50px auto 0;
+      margin: 60px auto 0;
       text-align: center;
       padding: 20px;
     }
     header h1 {
       font-family: "Playfair Display", serif;
       font-size: 44px;
-      color: var(--gold);
-      text-shadow: 0 0 18px rgba(212,175,55,0.4);
+      color: var(--black);
+      text-shadow: 0 0 10px rgba(212,175,55,0.3);
     }
     header p {
-      color: #ccc;
+      color: var(--grey);
       max-width: 700px;
       margin: 0 auto 20px;
     }
     .cta {
       display: inline-block;
-      background: linear-gradient(90deg, var(--gold), var(--soft-gold));
-      color: #111;
+      background: var(--gold);
+      color: var(--black);
       padding: 12px 22px;
       border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
       transition: 0.25s;
-      box-shadow: 0 4px 12px rgba(212,175,55,0.2);
+      box-shadow: 0 4px 12px rgba(212,175,55,0.25);
     }
     .cta:hover {
+      background: var(--soft-gold);
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(212,175,55,0.3);
+      box-shadow: 0 8px 18px rgba(212,175,55,0.3);
     }
 
-    /* ===== PANELS ===== */
+    /* ===== SECTIONS ===== */
     section {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 0 18px;
     }
     .panel {
-      background: rgba(15,15,15,0.9);
-      border: 1px solid rgba(212,175,55,0.3);
+      background: var(--light);
+      border: 1px solid rgba(0,0,0,.1);
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
     }
     h2 {
       font-family: "Playfair Display", serif;
-      color: var(--gold);
+      color: var(--black);
       font-size: 1.6rem;
       margin-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 4px;
     }
 
-    /* ===== CARDS ===== */
+    /* ===== PACKAGES ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
     .card {
-      background: rgba(22,22,22,0.9);
-      border: 1px solid rgba(212,175,55,0.25);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.1);
       border-radius: 16px;
       padding: 20px;
       text-align: center;
       transition: 0.25s;
     }
     .card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(212,175,55,0.25);
       transform: translateY(-4px);
-      box-shadow: 0 0 10px rgba(212,175,55,0.3);
     }
     .price {
-      color: #0fa36a;
+      color: var(--emerald);
       font-weight: 700;
       font-size: 18px;
       margin-top: 10px;
@@ -159,12 +166,12 @@
     /* ===== OFFER ===== */
     .offer {
       margin-top: 20px;
-      background: linear-gradient(90deg, rgba(212,175,55,0.15), rgba(18,58,44,0.15), rgba(212,175,55,0.15));
+      background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(18,58,44,0.1), rgba(212,175,55,0.1));
       border: 1px solid rgba(212,175,55,0.35);
       border-radius: 14px;
       padding: 16px;
       text-align: center;
-      color: var(--soft-gold);
+      color: var(--black);
       font-weight: 500;
     }
     .offer b { color: var(--gold); }
@@ -175,8 +182,7 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .contact a:hover { color: var(--soft-gold); text-decoration: underline; }
-
+    .contact a:hover { color: var(--black); text-decoration: underline; }
     .btn-whatsapp {
       display: inline-block;
       margin-top: 10px;
@@ -190,12 +196,12 @@
 
     /* ===== FOOTER ===== */
     footer {
-      background: linear-gradient(180deg, #0c0c0c, #080808);
-      border-top: 1px solid rgba(212,175,55,0.3);
-      color: #bbb;
+      background: var(--black);
+      color: var(--white);
       text-align: center;
       padding: 22px;
       font-size: 0.9rem;
+      border-top: 2px solid var(--gold);
     }
     footer a { color: var(--gold); text-decoration: none; }
     footer a:hover { color: var(--soft-gold); text-decoration: underline; }

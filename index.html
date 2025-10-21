@@ -1,301 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quraysh Industries — Royal Precision</title>
-  <meta name="description" content="Quraysh Industries helps students buy cars smartly, safely, and affordably with royal British–Mughal precision." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --white: #ffffff;
-      --light: #f7f7f7;
-      --black: #121212;
-      --dark: #1a1a1a;
-      --gold: #d4af37;
-      --soft-gold: #e2c275;
-      --grey: #333333;
-      --emerald: #123a2c;
-      --radius: 18px;
-      --shadow: 0 8px 26px rgba(0,0,0,.15);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quraysh Industries — Precision. Trust. Royal Standards.</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4af37;
+  --soft-gold: #e2c275;
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --light: #f9f9f9;
+  --emerald: #0f5132;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+  --radius: 18px;
+}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Poppins, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      line-height: 1.6;
-    }
+/* Basic reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+html {scroll-behavior:smooth;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
 
-    /* ===== NAVBAR ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 2px solid var(--gold);
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
-    }
-    .nav-wrap {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 18px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--black);
-      text-decoration: none;
-      font-family: "Playfair Display", serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-    .brand img {
-      height: 40px;
-      width: auto;
-    }
-    .tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .tab {
-      color: var(--black);
-      text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 12px;
-      transition: 0.25s;
-      font-weight: 500;
-    }
-    .tab:hover {
-      background: var(--gold);
-      color: var(--white);
-    }
+/* Header/Nav */
+nav {
+  position: sticky; top:0; z-index:100;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 20px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:"Playfair Display",serif;
+  font-weight:700;
+  color:var(--black);
+  text-decoration:none;
+  font-size:1.3rem;
+}
+.brand img {height:40px;width:auto;}
+.tabs {display:flex;gap:10px;flex-wrap:wrap;}
+.tabs a {
+  text-decoration:none;
+  color:var(--black);
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:500;
+  transition:0.3s;
+}
+.tabs a:hover {
+  background: var(--gold);
+  color:var(--white);
+}
 
-    /* ===== HERO ===== */
-    header {
-      max-width: 1100px;
-      margin: 60px auto 0;
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 44px;
-      color: var(--black);
-      text-shadow: 0 0 10px rgba(212,175,55,0.3);
-    }
-    header p {
-      color: var(--grey);
-      max-width: 700px;
-      margin: 0 auto 20px;
-    }
-    .cta {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.25s;
-      box-shadow: 0 4px 12px rgba(212,175,55,0.25);
-    }
-    .cta:hover {
-      background: var(--soft-gold);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(212,175,55,0.3);
-    }
+/* Hero */
+header {
+  text-align:center;
+  padding:80px 20px 60px;
+  animation: fadeIn 1s ease;
+}
+header h1 {
+  font-family:"Playfair Display",serif;
+  font-size:2.8rem;
+  color:var(--black);
+  animation: floatUp 1.5s ease;
+}
+header p {
+  margin: 10px auto 25px;
+  color:#333;
+  max-width:600px;
+}
+.cta {
+  display:inline-block;
+  background:linear-gradient(90deg,var(--gold),var(--soft-gold));
+  color:var(--black);
+  padding:12px 28px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.cta:hover {transform:translateY(-3px);box-shadow:0 8px 20px rgba(212,175,55,0.3);}
 
-    /* ===== SECTIONS ===== */
-    section {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 0 18px;
-    }
-    .panel {
-      background: var(--light);
-      border: 1px solid rgba(0,0,0,.1);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-    h2 {
-      font-family: "Playfair Display", serif;
-      color: var(--black);
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      border-bottom: 2px solid var(--gold);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
+/* Panels */
+section {
+  max-width:1100px;
+  margin:50px auto;
+  padding:0 20px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+section.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+.panel {
+  background: var(--light);
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:var(--radius);
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+h2 {
+  font-family:"Playfair Display",serif;
+  color:var(--black);
+  font-size:1.6rem;
+  border-bottom:2px solid var(--gold);
+  display:inline-block;
+  margin-bottom:15px;
+}
 
-    /* ===== PACKAGES ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,.1);
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      transition: 0.25s;
-    }
-    .card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 0 15px rgba(212,175,55,0.25);
-      transform: translateY(-4px);
-    }
-    .price {
-      color: var(--emerald);
-      font-weight: 700;
-      font-size: 18px;
-      margin-top: 10px;
-    }
+/* Packages */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card {
+  background:var(--white);
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+  transition:0.3s;
+}
+.card:hover {
+  border-color:var(--gold);
+  box-shadow:0 5px 20px rgba(212,175,55,0.2);
+  transform:translateY(-5px);
+}
+.price {color:var(--emerald);font-weight:700;margin-top:10px;}
 
-    /* ===== OFFER ===== */
-    .offer {
-      margin-top: 20px;
-      background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(18,58,44,0.1), rgba(212,175,55,0.1));
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 14px;
-      padding: 16px;
-      text-align: center;
-      color: var(--black);
-      font-weight: 500;
-    }
-    .offer b { color: var(--gold); }
+/* Offer */
+.offer {
+  background:linear-gradient(90deg,rgba(212,175,55,0.1),rgba(18,58,44,0.1),rgba(212,175,55,0.1));
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  margin-top:20px;
+  color:#333;
+  font-weight:500;
+}
+.offer b {color:var(--gold);}
 
-    /* ===== CONTACT ===== */
-    .contact a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .contact a:hover { color: var(--black); text-decoration: underline; }
-    .btn-whatsapp {
-      display: inline-block;
-      margin-top: 10px;
-      background: linear-gradient(90deg, #10b981, #0c8a63);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-    }
+/* Contact */
+.contact a {color:var(--gold);text-decoration:none;font-weight:600;}
+.contact a:hover {text-decoration:underline;}
+.btn-whatsapp {
+  display:inline-block;
+  background:linear-gradient(90deg,#10b981,#0c8a63);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  margin-top:10px;
+  text-decoration:none;
+  font-weight:700;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 22px;
-      font-size: 0.9rem;
-      border-top: 2px solid var(--gold);
-    }
-    footer a { color: var(--gold); text-decoration: none; }
-    footer a:hover { color: var(--soft-gold); text-decoration: underline; }
-  </style>
+/* Footer */
+footer {
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
+  padding:25px 15px;
+  border-top:2px solid var(--gold);
+  font-size:0.9rem;
+}
+footer a {color:var(--gold);text-decoration:none;}
+footer a:hover {color:var(--soft-gold);}
+
+/* Keyframes */
+@keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+@keyframes floatUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* Dark/Light toggle button */
+.toggle-btn {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  width: 45px; height: 45px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+.toggle-btn:hover {background:var(--gold);color:var(--black);}
+.dark-mode {
+  background: var(--black);
+  color: var(--white);
+}
+.dark-mode nav {background:rgba(0,0,0,0.9);}
+.dark-mode .panel, .dark-mode .card {background:#1a1a1a;color:var(--white);}
+.dark-mode footer {background:#000;}
+</style>
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav>
-    <div class="nav-wrap">
-      <a class="brand" href="#home">
-        <img src="logo.png" alt="Quraysh Industries Logo">
-        Quraysh Industries
-      </a>
-      <div class="tabs">
-        <a class="tab" href="#home">Home</a>
-        <a class="tab" href="#about">About</a>
-        <a class="tab" href="#packages">Packages</a>
-        <a class="tab" href="#offers">Offers</a>
-        <a class="tab" href="#contact">Contact</a>
-      </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <a href="#home" class="brand"><img src="logo.png" alt="Quraysh Industries">Quraysh Industries</a>
+    <div class="tabs">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ===== HERO ===== -->
-  <header id="home">
-    <h1>Quraysh Industries</h1>
-    <p>Helping students buy cars smartly, safely, and affordably.</p>
-    <a class="cta" href="#packages">Explore Packages</a>
-  </header>
+<!-- HERO -->
+<header id="home">
+  <h1>Quraysh Industries</h1>
+  <p>Helping students buy cars smartly, safely, and affordably.</p>
+  <a href="#packages" class="cta">Explore Packages</a>
+</header>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <div class="panel">
-      <h2>About Us</h2>
-      <p>
-        Quraysh Industries blends British professionalism with Mughal heritage —
-        delivering <b>Precision, Trust, and Royal Standards</b> to every car purchase.
-        We shortlist great-value cars, guide negotiations, and ensure your deal is fair and safe.
-      </p>
+<!-- ABOUT -->
+<section id="about" class="panel">
+  <h2>About Us</h2>
+  <p>Quraysh Industries blends British professionalism with Mughal heritage — delivering <b>Precision, Trust, and Royal Standards</b> to every car purchase. We shortlist great-value cars, guide negotiations, and ensure your deal is fair and safe.</p>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="panel">
+  <h2>Our Packages</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Quick Pick</h3>
+      <p>3–5 shortlisted cars within budget, with checks on mileage, MOT history, and red flags.</p>
+      <p class="price">£25</p>
     </div>
-  </section>
-
-  <!-- ===== PACKAGES ===== -->
-  <section id="packages">
-    <div class="panel">
-      <h2>Our Packages</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Quick Pick</h3>
-          <p>3–5 shortlisted cars within budget, with checks on mileage, MOT history, and red flags.</p>
-          <p class="price">£25</p>
-        </div>
-        <div class="card">
-          <h3>Negotiator</h3>
-          <p>Quick Pick + seller messaging scripts, viewing checklist, and negotiation support.</p>
-          <p class="price">£80</p>
-        </div>
-        <div class="card">
-          <h3>Full Assist</h3>
-          <p>Complete assistance — search, shortlist, negotiation, and paperwork guidance.</p>
-          <p class="price">£250</p>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Negotiator</h3>
+      <p>Quick Pick + seller messaging scripts, viewing checklist, and negotiation support.</p>
+      <p class="price">£80</p>
     </div>
-  </section>
-
-  <!-- ===== OFFERS ===== -->
-  <section id="offers">
-    <div class="panel">
-      <h2>Royal Offer</h2>
-      <p class="offer">
-        🎁 <b>10% OFF</b> for verified YouTube & Instagram followers — use code <b>QURAYSH10</b>.
-        (Show your subscribed status at booking.)
-      </p>
+    <div class="card">
+      <h3>Full Assist</h3>
+      <p>Complete assistance — search, shortlist, negotiation, and paperwork guidance.</p>
+      <p class="price">£250</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="panel contact">
-      <h2>Contact</h2>
-      <p>WhatsApp: <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat with Quraysh</a></p>
-      <a class="btn-whatsapp" href="https://wa.me/44YOURNUMBER?text=Hi%20Quraysh%20Industries!" target="_blank">Message on WhatsApp</a>
-      <p style="margin-top:14px">Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
-    </div>
-  </section>
+<!-- OFFER -->
+<section id="offers" class="panel">
+  <h2>Royal Offer</h2>
+  <p class="offer">🎁 <b>10% OFF</b> for verified YouTube & Instagram followers — use code <b>QURAYSH10</b>. (Show your subscribed status at booking.)</p>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.”<br>
-    Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
-  </footer>
+<!-- CONTACT -->
+<section id="contact" class="panel contact">
+  <h2>Contact</h2>
+  <p>WhatsApp: <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat with Quraysh</a></p>
+  <a href="https://wa.me/44YOURNUMBER?text=Hi%20Quraysh%20Industries!" class="btn-whatsapp" target="_blank">Message on WhatsApp</a>
+  <p style="margin-top:14px">Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
+  <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.”<br>
+  Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
+</footer>
+
+<!-- Toggle Button -->
+<div class="toggle-btn" id="modeToggle" title="Toggle dark/light mode">☀️</div>
+
+<script>
+// Smooth fade-in on scroll
+const sections=document.querySelectorAll('section');
+const reveal=()=>{sections.forEach(s=>{const t=s.getBoundingClientRect().top;if(t<window.innerHeight-100){s.classList.add('visible');}})};
+window.addEventListener('scroll',reveal);
+reveal();
+
+// Dark/light toggle
+const toggle=document.getElementById('modeToggle');
+toggle.addEventListener('click',()=>{
+ document.body.classList.toggle('dark-mode');
+ toggle.textContent=document.body.classList.contains('dark-mode')?'🌙':'☀️';
+});
+</script>
 
 </body>
 </html>

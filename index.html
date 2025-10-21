@@ -14,7 +14,6 @@
   --white: #ffffff;
   --light: #f8f8f8;
   --emerald: #0f5132;
-  --grey: #2a2a2a;
   --shadow: 0 10px 25px rgba(0,0,0,0.08);
   --radius: 18px;
 }
@@ -32,7 +31,7 @@ body {
 /* Navbar */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(10px);
   border-bottom: 2px solid var(--gold);
   box-shadow: var(--shadow);
@@ -54,7 +53,11 @@ nav {
   font-size:1.4rem;
   text-decoration:none;
 }
-.brand img {height:40px; filter: drop-shadow(0 0 6px rgba(212,175,55,0.4));}
+.brand img {
+  height:40px;
+  width:auto;
+  filter: drop-shadow(0 0 5px rgba(212,175,55,0.4));
+}
 .tabs {display:flex; gap:16px;}
 .tabs a {
   text-decoration:none;
@@ -243,7 +246,8 @@ body.dark .card img {filter:brightness(0.8) sepia(0.3) saturate(1.2);}
 <nav>
   <div class="nav-container">
     <a href="#home" class="brand">
-      <img src="logo.png" alt="Quraysh Industries"> Quraysh Industries
+      <img src="logo.png" alt="Quraysh Industries Logo">
+      Quraysh Industries
     </a>
     <div class="tabs">
       <a href="#home">Home</a>
@@ -276,19 +280,19 @@ body.dark .card img {filter:brightness(0.8) sepia(0.3) saturate(1.2);}
   <h2>Our Packages</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1601933470090-46af0b5fcd5c?auto=format&fit=crop&w=900&q=80" alt="Compact car for Quick Pick">
+      <img src="https://images.unsplash.com/photo-1605559424843-9e4c6ad1f3c5?auto=format&fit=crop&w=1000&q=80" alt="Quick Pick car - Compact city car">
       <h3>Quick Pick</h3>
       <p>3–5 shortlisted cars within budget — with checks on mileage, MOT history, and red flags.</p>
       <p class="price">£25</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80" alt="Mid-range sedan for Negotiator">
+      <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a47f06?auto=format&fit=crop&w=1000&q=80" alt="Negotiator car - Sedan">
       <h3>Negotiator</h3>
       <p>Quick Pick + seller communication support, viewing checklist, and fair price negotiation.</p>
       <p class="price">£80</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1605559424843-9e4c6ad1f3c5?auto=format&fit=crop&w=900&q=80" alt="Luxury SUV for Full Assist">
+      <img src="https://images.unsplash.com/photo-1616455579106-1b49da9b7ac8?auto=format&fit=crop&w=1000&q=80" alt="Full Assist car - Luxury SUV">
       <h3>Full Assist</h3>
       <p>End-to-end assistance — car search, shortlists, negotiation, visit help, and paperwork.</p>
       <p class="price">£250</p>

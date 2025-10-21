@@ -26,6 +26,7 @@ body {
   background: var(--white);
   color: var(--black);
   transition: background 0.5s, color 0.5s;
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -229,6 +230,7 @@ body.dark .cta {
 body.dark footer {
   background:#000;
 }
+body.dark .card img {filter:brightness(0.8) sepia(0.3) saturate(1.2);}
 
 /* Animation */
 .visible {animation: fadeIn 1.2s ease forwards;}
@@ -274,19 +276,19 @@ body.dark footer {
   <h2>Our Packages</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/car-1957037_1280.jpg" alt="Quick Pick car">
+      <img src="https://images.unsplash.com/photo-1601933470090-46af0b5fcd5c?auto=format&fit=crop&w=900&q=80" alt="Compact car for Quick Pick">
       <h3>Quick Pick</h3>
       <p>3–5 shortlisted cars within budget — with checks on mileage, MOT history, and red flags.</p>
       <p class="price">£25</p>
     </div>
     <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2016/03/27/21/16/auto-1283629_1280.jpg" alt="Negotiator car">
+      <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80" alt="Mid-range sedan for Negotiator">
       <h3>Negotiator</h3>
       <p>Quick Pick + seller communication support, viewing checklist, and fair price negotiation.</p>
       <p class="price">£80</p>
     </div>
     <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2017/03/27/14/56/car-2179220_1280.jpg" alt="Full Assist car">
+      <img src="https://images.unsplash.com/photo-1605559424843-9e4c6ad1f3c5?auto=format&fit=crop&w=900&q=80" alt="Luxury SUV for Full Assist">
       <h3>Full Assist</h3>
       <p>End-to-end assistance — car search, shortlists, negotiation, visit help, and paperwork.</p>
       <p class="price">£250</p>

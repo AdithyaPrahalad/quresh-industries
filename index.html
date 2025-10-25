@@ -3,364 +3,210 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Drive Smart. Drive Royal.</title>
-<meta name="description" content="A modern, royal, low-key automotive landing page with precision motion and gold accents." />
-<meta name="color-scheme" content="dark light" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+<title>Quraysh Concierge — Your First Car in the UK, Done Right.</title>
+<meta name="description" content="Honest, data-driven car sourcing for newcomers who don’t want dealership lies or marketplace scams. Quraysh Concierge: from shortlist to keys-in-hand." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
+<meta name="color-scheme" content="dark light">
+
 <style>
-  :root{
-    --bg:#0a0a0a;        /* deep carbon */
-    --panel:#0f0f0f;     /* slightly lifted */
-    --ink:#f0f0f0;       /* foreground text */
-    --muted:#b7bac2;     /* secondary text */
-    --gold:#caa548;      /* luxury accent */
-    --gold-soft:#e2c275; /* hover accent */
-    --line:#1a1a1a;      /* card borders */
-    --radius:18px;
-    --shadow:0 20px 60px rgba(0,0,0,.45);
-    --wrap:1200px;
-  }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#f7f7f7; --panel:#ffffff; --ink:#111; --muted:#495060; --line:#e7e7e7; }
-  }
+:root {
+  --bg:#0a0a0a; --panel:#0f0f0f; --ink:#f5f5f5;
+  --muted:#a8a8a8; --gold:#caa548; --gold-soft:#e2c275;
+  --line:#1a1a1a; --radius:18px; --shadow:0 20px 60px rgba(0,0,0,.45);
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',sans-serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
+/* NAV */
+nav{position:sticky;top:0;z-index:99;background:rgba(15,15,15,.7);backdrop-filter:blur(10px);border-bottom:1px solid #1b1b1b;}
+.nav-wrap{max-width:var(--wrap);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;}
+.brand{font:700 1.35rem 'Playfair Display',serif;text-decoration:none;color:var(--ink);letter-spacing:.4px;}
+.links{display:flex;gap:18px;flex-wrap:wrap;}
+.links a{color:var(--muted);text-decoration:none;font-weight:600;transition:.3s;padding:6px 10px;border-radius:10px}
+.links a:hover{color:var(--gold);background:#151515}
 
-  /* Skip link */
-  .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-  .skip:focus{left:16px;top:12px;width:auto;height:auto;background:#000;border:2px solid var(--gold);color:#fff;padding:8px 12px;border-radius:10px;z-index:999}
+/* HERO */
+header{position:relative;overflow:hidden;min-height:80vh;display:grid;place-items:center;border-bottom:1px solid #1a1a1a;}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;}
+.hero-inner{position:relative;z-index:1;text-align:center;padding:80px 20px 100px;max-width:var(--wrap);margin:auto;}
+.hero-inner h1{font:700 clamp(2.2rem,5vw,3.3rem) 'Playfair Display',serif;margin:0 0 12px;}
+.hero-inner p{max-width:720px;margin:auto;color:var(--muted);font-size:1.05rem;}
+.cta{display:inline-block;margin-top:30px;padding:13px 32px;border-radius:50px;background:linear-gradient(90deg,var(--gold),var(--gold-soft));color:#111;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(202,165,72,.35);transition:.3s;}
+.cta:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(202,165,72,.45);}
+.bg-grid{position:absolute;inset:0;pointer-events:none;opacity:.08;background:linear-gradient(90deg,rgba(202,165,72,.3) 1px,transparent 1px),linear-gradient(180deg,rgba(202,165,72,.3) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite;}
+@keyframes gridMove{to{transform:translateY(60px);}}
 
-  /* NAV */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(15,15,15,.7);
-    backdrop-filter: blur(12px);
-    border-bottom:1px solid #232323;
-  }
-  .nav-row{
-    max-width:var(--wrap); margin:auto;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 18px;
-  }
-  .brand{
-    font:700 1.25rem "Playfair Display",serif; letter-spacing:.4px;
-    color:var(--ink); text-decoration:none;
-  }
-  .links{display:flex; gap:16px; flex-wrap:wrap;}
-  .links a{
-    color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px;
-    transition:color .25s, background .25s, transform .25s;
-  }
-  .links a:hover{ color:var(--ink); background:#151515; transform:translateY(-1px); }
-  .cta-mini{
-    color:#111; background:linear-gradient(90deg,var(--gold),var(--gold-soft));
-    border-radius:12px; padding:10px 14px; text-decoration:none; font-weight:800;
-  }
+/* SECTIONS */
+section{position:relative;max-width:var(--wrap);margin:100px auto;padding:0 20px;}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:40px;}
+h2{font:700 1.8rem 'Playfair Display',serif;text-align:center;margin-bottom:20px;}
+.subtitle{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 20px;}
 
-  /* HERO */
-  header{
-    position:relative; overflow:hidden;
-    min-height:72vh; display:grid; place-items:center;
-    border-bottom:1px solid #191919;
-  }
-  /* Canvas sits behind content */
-  #hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block;}
-  .hero-inner{
-    position:relative; z-index:1; text-align:center; padding:80px 18px 100px;
-    max-width:var(--wrap); margin:auto;
-  }
-  .kicker{ color:var(--gold); font-weight:700; letter-spacing:.3px; margin-bottom:10px; text-transform:uppercase; font-size:.85rem; }
-  h1{
-    font:700 clamp(2.1rem,5vw,3.3rem) "Playfair Display",serif; margin:0 0 10px;
-  }
-  .lead{
-    color:var(--muted); max-width:760px; margin:0 auto 24px; font-size:1.05rem;
-  }
-  .cta{
-    display:inline-block;
-    padding:12px 26px; border-radius:14px; text-decoration:none; font-weight:800;
-    background:linear-gradient(90deg,var(--gold),var(--gold-soft)); color:#111;
-    box-shadow:0 12px 30px rgba(202,165,72,.25);
-    transition: transform .25s, box-shadow .25s;
-  }
-  .cta:hover{ transform:translateY(-2px); box-shadow:0 16px 44px rgba(202,165,72,.35); }
+/* GRID */
+.grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.card{position:relative;border-radius:16px;border:1px solid var(--line);padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));transition:.3s;}
+.card:hover{transform:translateY(-5px);border-color:#2a2a2a;box-shadow:0 16px 36px rgba(0,0,0,.4);}
+.icon{color:var(--gold);margin-bottom:14px;}
+.card h3{margin-bottom:8px;font-weight:700;}
+.card p{color:var(--muted);}
+.price{color:#4fe28b;font-weight:700;margin-top:8px;}
 
-  /* Floating gold grid behind sections */
-  .bg-grid{
-    position:absolute; inset:0; pointer-events:none; opacity:.10; mask-image: radial-gradient(ellipse at 50% 40%, #000 50%, transparent 85%);
-    background:
-      linear-gradient(90deg, rgba(202,165,72,.35) 1px, transparent 1px),
-      linear-gradient(180deg, rgba(202,165,72,.35) 1px, transparent 1px);
-    background-size:60px 60px, 60px 60px;
-    animation: gridMove 18s linear infinite;
-  }
-  @keyframes gridMove { to{ transform: translateY(60px); } }
+/* FAQ */
+.faq-item{border-bottom:1px solid #222;padding:16px 0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:var(--gold);font-weight:600;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--muted);padding-left:4px;}
+.faq-item.active .faq-a{max-height:300px;margin-top:10px;}
 
-  /* SECTIONS */
-  section{ position:relative; max-width:var(--wrap); margin:80px auto; padding:0 18px; }
-  .panel{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:28px;
-  }
-  .title{
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    margin:0 0 18px; font:700 1.6rem "Playfair Display",serif;
-  }
-  .subtitle{ color:var(--muted); text-align:center; margin:0 auto 16px; max-width:780px; }
+/* FOOTER */
+footer{border-top:1px solid #1a1a1a;padding:30px 20px;text-align:center;color:var(--muted);font-size:.9rem;}
+footer a{color:var(--gold);text-decoration:none;}
+footer a:hover{color:var(--gold-soft);}
 
-  /* 3 Columns */
-  .grid{
-    display:grid; gap:20px; grid-template-columns: repeat(3,minmax(0,1fr));
-  }
-  @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
-
-  /* Cards with golden hairline + subtle glow */
-  .card{
-    position:relative; overflow:hidden;
-    border-radius:16px; border:1px solid var(--line);
-    padding:22px; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-    transition: transform .25s, box-shadow .25s, border-color .25s;
-  }
-  .card::before{
-    content:""; position:absolute; inset:0;
-    background:linear-gradient(135deg, rgba(202,165,72,.10), transparent 60%);
-    opacity:0; transition:opacity .25s;
-  }
-  .card:hover{ transform:translateY(-4px); border-color:#2a2a2a; box-shadow:0 16px 36px rgba(0,0,0,.35); }
-  .card:hover::before{ opacity:1; }
-  .icon{ color:var(--gold); margin-bottom:10px; }
-  .card h3{ margin:0 0 6px; font-weight:700; letter-spacing:.2px; }
-  .card p{ margin:0; color:var(--muted); }
-  .price{ color:#3dd68c; font-weight:800; margin-top:10px; }
-
-  /* Step row with golden line */
-  .steps{
-    display:grid; gap:16px; grid-template-columns:repeat(4,minmax(0,1fr));
-    margin-top:16px;
-  }
-  @media (max-width:900px){ .steps{ grid-template-columns:1fr; } }
-  .step{
-    border:1px dashed #2a2a2a; border-radius:14px; padding:16px; background:rgba(255,255,255,.02);
-  }
-  .step b{ color:var(--ink); display:block; margin-bottom:6px; }
-
-  /* Footer */
-  footer{
-    border-top:1px solid #191919; padding:28px 18px; text-align:center; color:var(--muted);
-  }
-  footer a{ color:var(--gold); text-decoration:none; }
-  footer a:hover{ color:var(--gold-soft); }
-
-  /* Reveal */
-  .reveal{ opacity:0; transform:translateY(22px); transition: opacity .8s, transform .8s; }
-  .reveal.on{ opacity:1; transform:none; }
-
-  /* Toggle */
-  .toggle{
-    position:fixed; right:18px; bottom:18px; z-index:60;
-    width:46px; height:46px; border-radius:50%;
-    border:2px solid var(--gold); background:rgba(15,15,15,.9); color:var(--gold);
-    display:grid; place-items:center; cursor:pointer; font-size:20px; transition: .25s;
-  }
-  .toggle:hover{ background:var(--gold); color:#111; }
-
-  /* Reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    .bg-grid{ animation:none; }
-    #hero-canvas{ display:none; }
-  }
+/* TOGGLE */
+.toggle{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);background:rgba(15,15,15,.9);color:var(--gold);display:grid;place-items:center;font-size:20px;cursor:pointer;transition:.3s;}
+.toggle:hover{background:var(--gold);color:#111;}
+.icon{animation:float 3s ease-in-out infinite alternate;}
+@keyframes float{to{transform:translateY(-6px);}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- NAV -->
-<nav aria-label="Primary">
-  <div class="nav-row">
-    <a class="brand" href="#home">QURAYSH</a>
-    <div class="links" role="navigation">
+<nav>
+  <div class="nav-wrap">
+    <a href="#home" class="brand">Quraysh Concierge</a>
+    <div class="links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#packages">Packages</a>
-      <a href="#process">Process</a>
-      <a href="#contact" class="cta-mini">Enquire</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<header id="home" aria-label="Hero">
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
-  <div class="bg-grid" aria-hidden="true"></div>
+<header id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="bg-grid"></div>
   <div class="hero-inner">
-    <div class="kicker">Royal Precision</div>
-    <h1>Drive Smart. Drive Royal.</h1>
-    <p class="lead">A modern, low-key automotive service — crafted for buyers who value discretion, accuracy, and design. Precision shortlists, fair pricing, and end-to-end guidance.</p>
-    <a class="cta" href="#packages">Explore Packages</a>
+    <h1>Your First Car in the UK, Done Right.</h1>
+    <p>Honest, data-driven car sourcing for newcomers who don’t want dealership lies or marketplace scams.<br><br>
+    Quraysh Concierge shortlists real cars worth your money — checked for MOT, mileage, history, ULEZ, and resale value.<br>
+    <b>From first shortlist to keys-in-hand.</b></p>
+    <a href="#packages" class="cta">Get Started</a>
   </div>
 </header>
 
-<main id="main">
-  <!-- ABOUT -->
-  <section id="about" class="reveal">
-    <div class="panel">
-      <h2 class="title">About</h2>
-      <p class="subtitle">We blend <b>data-driven research</b> with a <b>luxury-grade client experience</b>: clean, decisive, and efficient.
-        Every recommendation is screened for value, history, and risk — so you never overpay.</p>
-    </div>
-  </section>
+<section id="about">
+  <div class="panel">
+    <h2>About Us</h2>
+    <p class="subtitle">
+      Moving to a new country shouldn’t mean gambling £5 000 on a mystery Civic.<br><br>
+      Quraysh Concierge blends automotive expertise, market data, and street-level knowledge to protect your wallet — and your fun.<br><br>
+      Founded in Edinburgh by engineering students and car enthusiasts, Quraysh exists to simplify everything from AutoTrader confusion to private-seller meet-ups.
+    </p>
+  </div>
+</section>
 
-  <!-- PACKAGES -->
-  <section id="packages" class="reveal">
-    <h2 class="title">Packages</h2>
+<section id="packages">
+  <h2>Packages</h2>
+  <div class="grid">
+    <div class="card">
+      <i class="icon" data-lucide="list"></i>
+      <h3>Quick Pick</h3>
+      <p>You send your budget + preferences. We send 3–5 verified cars with MOT + red-flag report. Perfect for quick decisions.</p>
+      <div class="price">£25 — 48 hrs</div>
+    </div>
+    <div class="card">
+      <i class="icon" data-lucide="user-check"></i>
+      <h3>Field Agent</h3>
+      <p>Adds viewing prep: negotiation script, inspection checklist, and valuation comparison so you never overpay.</p>
+      <div class="price">£90 — 3 days</div>
+    </div>
+    <div class="card">
+      <i class="icon" data-lucide="crown"></i>
+      <h3>Full Broker</h3>
+      <p>Complete white-glove service: Quraysh handles the search, viewing support (remote or in-person), messaging, paperwork, and payment guidance.</p>
+      <div class="price">£270 — 1 week</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="panel">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Who’s it for?<i data-lucide="chevron-down"></i></div>
+      <div class="faq-a">International students, expats, or car flippers who need help buying smart in the UK.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you take commission?<i data-lucide="chevron-down"></i></div>
+      <div class="faq-a">Never. We charge flat fees so you know we’re on your side.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How fast is delivery?<i data-lucide="chevron-down"></i></div>
+      <div class="faq-a">Quick Pick = 48 hrs • Field Agent = 3 days • Full Broker = up to 1 week (including viewings).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you work outside Edinburgh?<i data-lucide="chevron-down"></i></div>
+      <div class="faq-a">Yes. Remote packages are UK-wide; physical assistance available in central Scotland.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can you help with insurance or road tax?<i data-lucide="chevron-down"></i></div>
+      <div class="faq-a">Yes — we guide you through setup and point you to trusted partners for insurance, tax, and registration.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="panel">
+    <h2>Contact</h2>
+    <p class="subtitle">Reach us for your first briefing or collaboration.</p>
     <div class="grid">
-      <article class="card">
-        <i class="icon" data-lucide="list"></i>
-        <h3>Quick Pick</h3>
-        <p>3–5 verified options within budget, with mileage & MOT checks and red-flag filters.</p>
-        <div class="price">£25</div>
-      </article>
-      <article class="card">
-        <i class="icon" data-lucide="handshake"></i>
-        <h3>Negotiator</h3>
-        <p>Messaging scripts, viewing checklist, and negotiation guidance for a fair close.</p>
-        <div class="price">£80</div>
-      </article>
-      <article class="card">
-        <i class="icon" data-lucide="crown"></i>
-        <h3>Full Assist</h3>
-        <p>End-to-end — search, shortlist, negotiation, viewing support, and paperwork review.</p>
-        <div class="price">£250</div>
-      </article>
+      <div class="card"><i class="icon" data-lucide="mail"></i><h3>Email</h3><p><a href="mailto:qureshindustries@gmail.com" style="color:var(--gold);text-decoration:none;">qureshindustries@gmail.com</a></p></div>
+      <div class="card"><i class="icon" data-lucide="instagram"></i><h3>Instagram</h3><p><a href="https://instagram.com/quresh.industries" target="_blank" style="color:var(--gold);text-decoration:none;">@quresh.industries</a></p></div>
+      <div class="card"><i class="icon" data-lucide="phone"></i><h3>WhatsApp</h3><p><a href="https://wa.me/44YOURNUMBER" target="_blank" style="color:var(--gold);text-decoration:none;">Chat Now</a></p></div>
     </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" class="reveal">
-    <div class="panel">
-      <h2 class="title">Process</h2>
-      <p class="subtitle">Fast, calm, and transparent. A four-step framework focused on <b>clarity</b> and <b>value</b>.</p>
-      <div class="steps">
-        <div class="step"><b>1) Brief</b> Budget, use-case, non-negotiables.</div>
-        <div class="step"><b>2) Shortlist</b> 3–5 options with checks & notes.</div>
-        <div class="step"><b>3) Compare</b> Pros/cons, pricing, risk review.</div>
-        <div class="step"><b>4) Close</b> Messaging, viewing & paperwork.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="reveal">
-    <div class="panel">
-      <h2 class="title">Contact</h2>
-      <p class="subtitle">Questions or ready to brief? Reach out.</p>
-      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));">
-        <div class="card"><i class="icon" data-lucide="mail"></i><h3>Email</h3><p><a href="mailto:qureshindustries@gmail.com" style="color:var(--gold);text-decoration:none;">qureshindustries@gmail.com</a></p></div>
-        <div class="card"><i class="icon" data-lucide="instagram"></i><h3>Instagram</h3><p><a href="https://instagram.com/quresh.industries" target="_blank" style="color:var(--gold);text-decoration:none;">@quresh.industries</a></p></div>
-        <div class="card"><i class="icon" data-lucide="phone"></i><h3>WhatsApp</h3><p><a href="https://wa.me/44YOURNUMBER" target="_blank" style="color:var(--gold);text-decoration:none;">Chat now</a></p></div>
-      </div>
-    </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
-  © 2025 — “Precision. Trust. Royal Standards.” · <a href="#home">Back to top</a>
+  © 2025 Quraysh Concierge — “Precision. Trust. Royal Standards.” | Built by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
 </footer>
 
-<!-- Theme Toggle -->
-<button class="toggle" id="modeToggle" aria-label="Toggle theme">🌙</button>
+<div class="toggle" id="modeToggle">🌙</div>
 
 <script>
-  // Icons
-  lucide.createIcons();
+lucide.createIcons();
 
-  // Reveal on scroll
-  const els=[...document.querySelectorAll('.reveal')];
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }});
-  },{ threshold:.12 });
-  els.forEach(el=>io.observe(el));
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    q.parentElement.classList.toggle('active');
+    q.querySelector('i').style.transform=q.parentElement.classList.contains('active')?'rotate(180deg)':'rotate(0deg)';
+  });
+});
 
-  // Theme toggle (persist + respect system on first load)
-  const btn=document.getElementById('modeToggle');
-  const prefersDark=matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
-  function applyTheme(dark){
-    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-    document.body.style.setProperty('--bg', dark ? '#0a0a0a' : '#f7f7f7');
-    document.body.style.setProperty('--panel', dark ? '#0f0f0f' : '#ffffff');
-    document.body.style.setProperty('--ink', dark ? '#f0f0f0' : '#111');
-    document.body.style.setProperty('--muted', dark ? '#b7bac2' : '#495060');
-    document.body.style.setProperty('--line', dark ? '#1a1a1a' : '#e7e7e7');
-    btn.textContent = dark ? '☀️' : '🌙';
-    localStorage.setItem('qi.dark', dark ? '1' : '0');
-  }
-  applyTheme(localStorage.getItem('qi.dark')==='1' || (!localStorage.getItem('qi.dark') && prefersDark));
-  btn.addEventListener('click',()=>applyTheme(btn.textContent==='🌙'));
+// Dark/light toggle
+const btn=document.getElementById('modeToggle');
+const prefersDark=matchMedia('(prefers-color-scheme: dark)').matches;
+function apply(d){document.documentElement.style.colorScheme=d?'dark':'light';btn.textContent=d?'☀️':'🌙';localStorage.setItem('dark',d?'1':'0');}
+apply(localStorage.getItem('dark')==='1'||(!localStorage.getItem('dark')&&prefersDark));
+btn.onclick=()=>apply(btn.textContent==='🌙');
 
-  // Canvas hero light-streaks (no images)
-  const canvas=document.getElementById('hero-canvas');
-  const ctx=canvas.getContext('2d',{alpha:true});
-  let w,h,rafId,ts=0;
-  const DPR = Math.min(2,window.devicePixelRatio||1);
-
-  function resize(){
-    w=canvas.clientWidth; h=canvas.clientHeight;
-    canvas.width = Math.floor(w*DPR); canvas.height=Math.floor(h*DPR);
-    ctx.setTransform(DPR,0,0,DPR,0,0);
-  }
-  function rand(a,b){ return Math.random()*(b-a)+a; }
-
-  const streaks = Array.from({length: 32}).map(()=>({
-    x: rand(-0.1,1.1), y: rand(-0.1,1.1),
-    vx: rand(-0.02,0.02), vy: rand(0.02,0.06),
-    w: rand(60,180), a: rand(0.08,0.22)
-  }));
-
-  function tick(t){
-    const dt = Math.min(32, t - ts); ts = t;
-    ctx.clearRect(0,0,w,h);
-
-    // vignette
-    const g=ctx.createRadialGradient(w*0.5,h*0.35,0,w*0.5,h*0.35,Math.max(w,h)*0.9);
-    g.addColorStop(0,'rgba(202,165,72,0.10)');
-    g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
-
-    // streaks
-    streaks.forEach(s=>{
-      s.x += s.vx * dt/1000; s.y += s.vy * dt/1000;
-      if(s.y>1.2){ s.y=-0.2; s.x=rand(0,1); }
-      const x = s.x*w, y=s.y*h;
-      const grd=ctx.createLinearGradient(x- s.w, y- s.w, x+ s.w, y+ s.w);
-      grd.addColorStop(0,`rgba(202,165,72,0)`);
-      grd.addColorStop(0.5,`rgba(202,165,72,${s.a})`);
-      grd.addColorStop(1,`rgba(202,165,72,0)`);
-      ctx.strokeStyle=grd; ctx.lineWidth=2;
-      ctx.beginPath(); ctx.moveTo(x- s.w,y- s.w); ctx.lineTo(x+ s.w,y+ s.w); ctx.stroke();
-    });
-
-    rafId = requestAnimationFrame(tick);
-  }
-
-  function start(){ cancelAnimationFrame(rafId); resize(); ts=performance.now(); rafId=requestAnimationFrame(tick); }
-  start();
-  addEventListener('resize', start);
-
-  // Stop animation if tab hidden (battery-friendly)
-  document.addEventListener('visibilitychange',()=>{ if(document.hidden){ cancelAnimationFrame(rafId); } else { start(); }});
+// Hero animation
+const c=document.getElementById('hero-canvas'),ctx=c.getContext('2d',{alpha:true});
+let w,h,raf,t0=0;const DPR=Math.min(2,window.devicePixelRatio||1);
+function resize(){w=c.clientWidth;h=c.clientHeight;c.width=w*DPR;c.height=h*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}
+const lines=Array.from({length:28},()=>({x:Math.random(),y:Math.random(),v:0.02+Math.random()*0.04,l:80+Math.random()*100,a:0.1+Math.random()*0.2}));
+function frame(t){ctx.clearRect(0,0,w,h);const dt=t-t0;t0=t;lines.forEach(L=>{L.y+=L.v*dt/1000;if(L.y>1.2)L.y=-0.2;const x=L.x*w,y=L.y*h,g=ctx.createLinearGradient(x-L.l,y-L.l,x+L.l,y+L.l);g.addColorStop(0,'rgba(202,165,72,0)');g.addColorStop(0.5,`rgba(202,165,72,${L.a})`);g.addColorStop(1,'rgba(202,165,72,0)');ctx.strokeStyle=g;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x-L.l,y-L.l);ctx.lineTo(x+L.l,y+L.l);ctx.stroke();});raf=requestAnimationFrame(frame);}
+function start(){cancelAnimationFrame(raf);resize();frame(performance.now());}
+start();addEventListener('resize',start);
 </script>
-
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </body>
 </html>

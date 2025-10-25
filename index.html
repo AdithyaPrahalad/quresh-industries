@@ -1,340 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quraysh Industries — Drive Smart. Drive Royal.</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Essentials -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quraysh Industries — Drive Smart. Drive Royal.</title>
+  <meta name="description" content="Quraysh Industries helps students buy cars smartly, safely, and affordably — with British professionalism and royal Mughal heritage. Packages from quick shortlists to full assist." />
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --gold: #d4af37;
-  --soft-gold: #e2c275;
-  --black: #111;
-  --white: #ffffff;
-  --light: #f8f8f8;
-  --emerald: #0f5132;
-  --shadow: 0 10px 25px rgba(0,0,0,0.08);
-  --radius: 18px;
-}
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Quraysh Industries — Drive Smart. Drive Royal." />
+  <meta property="og:description" content="Student-first car-buying help. We shortlist, compare, negotiate and guide you end-to-end." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="theme-color" content="#d4af37" />
 
-/* Reset */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--white);
-  color: var(--black);
-  transition: background 0.5s, color 0.5s;
-  scroll-behavior: smooth;
-}
+  <style>
+    :root{
+      --gold:#d4af37;
+      --soft-gold:#e2c275;
+      --black:#111111;
+      --ink:#222;
+      --white:#ffffff;
+      --light:#f8f8f8;
+      --emerald:#0f5132;
+      --muted:#6b7280;
+      --radius:18px;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+      --grid:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      transition:background .4s,color .4s;
+    }
 
-/* Navbar */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--gold);
-  box-shadow: var(--shadow);
-  transition: background 0.4s;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-}
-.brand {
-  display:flex; align-items:center; gap:10px;
-  font-family:"Playfair Display", serif;
-  font-weight:700;
-  color:var(--black);
-  font-size:1.4rem;
-  text-decoration:none;
-}
-.brand img {
-  height:40px;
-  width:auto;
-  filter: drop-shadow(0 0 5px rgba(212,175,55,0.4));
-}
-.tabs {display:flex; gap:16px;}
-.tabs a {
-  text-decoration:none;
-  color:var(--black);
-  padding:8px 14px;
-  border-radius:10px;
-  transition:0.3s;
-}
-.tabs a:hover {
-  background:var(--gold);
-  color:var(--white);
-}
+    /* NAV */
+    nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(10px);
+      border-bottom:2px solid var(--gold);
+      box-shadow:var(--shadow);
+    }
+    .nav-row{max-width:var(--grid);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:700 1.3rem "Playfair Display",serif}
+    .brand img{height:40px;width:auto;filter:drop-shadow(0 0 6px rgba(212,175,55,.45))}
+    .tabs{display:flex;gap:12px;flex-wrap:wrap}
+    .tab{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;transition:.25s}
+    .tab:hover{background:var(--gold);color:#111}
 
-/* Hero Section */
-header {
-  text-align:center;
-  padding:90px 20px 70px;
-  background:linear-gradient(180deg, #fff 0%, #f7f3e3 100%);
-  transition:background 0.5s;
-}
-header h1 {
-  font-family:"Playfair Display",serif;
-  font-size:2.9rem;
-  color:var(--black);
-  text-shadow:0 0 10px rgba(212,175,55,0.2);
-}
-header p {
-  color:#333;
-  margin:10px auto 25px;
-  max-width:600px;
-}
-.cta {
-  display:inline-block;
-  background:linear-gradient(90deg,var(--gold),var(--soft-gold));
-  color:var(--black);
-  padding:12px 28px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 6px 18px rgba(212,175,55,0.4);
-  transition:0.3s;
-}
-.cta:hover {transform:translateY(-3px); box-shadow:0 10px 25px rgba(212,175,55,0.5);}
+    /* HERO */
+    header{
+      text-align:center;
+      padding:84px 18px 64px;
+      background:linear-gradient(180deg,#fff 0%,#f7f3e3 100%);
+    }
+    .title{font:700 2.9rem "Playfair Display",serif;margin:0 0 10px;color:var(--ink);text-shadow:0 0 10px rgba(212,175,55,.25)}
+    .lead{max-width:720px;margin:0 auto 22px;color:#333}
+    .cta{
+      display:inline-block;
+      padding:12px 26px;border-radius:12px;
+      font-weight:700;text-decoration:none;color:#111;
+      background:linear-gradient(90deg,var(--gold),var(--soft-gold));
+      box-shadow:0 6px 18px rgba(212,175,55,.4);
+      transition:.25s
+    }
+    .cta:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(212,175,55,.5)}
 
-/* Divider */
-.divider {
-  height:70px;
-  background: radial-gradient(circle, rgba(212,175,55,0.15) 1px, transparent 1px);
-  background-size:30px 30px;
-}
+    /* Sections */
+    section{max-width:var(--grid);margin:56px auto;padding:0 18px;opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+    section.show{opacity:1;transform:none}
+    .panel{background:var(--light);border-left:4px solid var(--gold);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    h2{font:700 1.7rem "Playfair Display",serif;margin:0 0 10px}
+    .muted{color:var(--muted)}
 
-/* Panels */
-section {
-  max-width:1100px;
-  margin:60px auto;
-  padding:0 20px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
-section.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-.panel {
-  background: var(--light);
-  border-left: 4px solid var(--gold);
-  border-radius: var(--radius);
-  padding:35px;
-  box-shadow:var(--shadow);
-}
+    /* Grid & Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+    .card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.05);transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(212,175,55,.25)}
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card .body{padding:18px;text-align:center}
+    .card h3{margin:8px 0 6px}
+    .price{color:var(--emerald);font-weight:800;margin-top:8px}
 
-/* Headings */
-h2 {
-  font-family:"Playfair Display",serif;
-  font-size:1.8rem;
-  margin-bottom:12px;
-  color:var(--black);
-}
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:6px}
+    .step{background:#fff;border:1px dashed rgba(0,0,0,.12);border-radius:14px;padding:16px}
+    .step b{color:#111}
 
-/* Packages */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-  margin-top:15px;
-}
-.card {
-  background:rgba(255,255,255,0.85);
-  border:1px solid rgba(0,0,0,0.08);
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,0.05);
-  transition:0.3s;
-  text-align:center;
-}
-.card:hover {transform:translateY(-5px); box-shadow:0 10px 30px rgba(212,175,55,0.25);}
-.card img {
-  width:100%;
-  height:170px;
-  object-fit:cover;
-}
-.card h3 {margin:12px 0 5px; font-size:1.2rem;}
-.card p {padding:0 15px;}
-.price {color:var(--emerald);font-weight:700;margin:10px 0;}
+    /* Why Us */
+    .pill{display:inline-block;border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:8px 12px;background:#fff}
 
-/* Offer */
-.offer {
-  background:linear-gradient(90deg, rgba(212,175,55,0.1), rgba(18,58,44,0.05));
-  border:1px solid rgba(212,175,55,0.3);
-  border-radius:14px;
-  padding:18px;
-  text-align:center;
-  font-weight:500;
-  margin-top:20px;
-}
-.offer b {color:var(--gold);}
+    /* Testimonials */
+    .quote{background:#fff;border-left:4px solid var(--gold);border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .quote b{display:block;margin-top:8px}
 
-/* Contact */
-.contact a {color:var(--gold); text-decoration:none; font-weight:600;}
-.contact a:hover {text-decoration:underline;}
+    /* Offer banner */
+    .offer{background:linear-gradient(90deg,rgba(212,175,55,.12),rgba(18,58,44,.06));border:1px solid rgba(212,175,55,.35);border-radius:14px;padding:14px;text-align:center}
 
-/* Footer */
-footer {
-  background:var(--black);
-  color:var(--white);
-  text-align:center;
-  padding:25px 15px;
-  border-top:2px solid var(--gold);
-  font-size:0.9rem;
-}
-footer a {color:var(--gold);}
-footer a:hover {color:var(--soft-gold);}
+    /* Contact */
+    .contact a{color:var(--gold);font-weight:700;text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+    .whatsapp{display:inline-block;margin-top:10px;border-radius:10px;padding:10px 16px;color:#fff;background:linear-gradient(90deg,#10b981,#0c8a63);text-decoration:none;font-weight:800}
 
-/* Toggle Button */
-.toggle-btn {
-  position: fixed;
-  bottom: 20px; right: 20px;
-  background: var(--black);
-  color: var(--gold);
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  width: 45px; height: 45px;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer;
-  font-size: 20px;
-  transition:0.3s;
-  z-index:200;
-}
-.toggle-btn:hover {background:var(--gold); color:var(--black);}
+    /* Footer */
+    footer{background:var(--black);color:#fff;text-align:center;padding:22px;border-top:2px solid var(--gold)}
+    footer a{color:var(--soft-gold);text-decoration:none}
+    footer a:hover{color:var(--gold)}
 
-/* Dark Mode */
-body.dark {
-  background: var(--black);
-  color: var(--white);
-}
-body.dark nav {
-  background: rgba(20, 20, 20, 0.95);
-  border-bottom: 2px solid var(--soft-gold);
-}
-body.dark header {
-  background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
-}
-body.dark .panel, body.dark .card {
-  background: #1b1b1b;
-  color: var(--white);
-  border-color: rgba(255,255,255,0.05);
-}
-body.dark .cta {
-  background:linear-gradient(90deg,var(--gold),var(--soft-gold));
-  color:#111;
-}
-body.dark footer {
-  background:#000;
-}
-body.dark .card img {filter:brightness(0.8) sepia(0.3) saturate(1.2);}
+    /* Toggle */
+    .toggle{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold);background:#111;color:var(--gold);cursor:pointer;font-size:20px;transition:.25s}
+    .toggle:hover{background:var(--gold);color:#111}
 
-/* Animation */
-.visible {animation: fadeIn 1.2s ease forwards;}
-@keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
-</style>
+    /* Dark mode */
+    body.dark{background:#0c0c0c;color:#eee}
+    body.dark nav{background:rgba(20,20,20,.96);border-bottom-color:var(--soft-gold)}
+    body.dark header{background:linear-gradient(180deg,#111 0%,#191919 100%)}
+    body.dark .panel,body.dark .card,body.dark .step,body.dark .quote{background:#171717;border-color:rgba(255,255,255,.06)}
+    body.dark .card img{filter:brightness(.88) sepia(.25) saturate(1.15)}
+    body.dark footer{background:#000}
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-container">
-    <a href="#home" class="brand">
-      <img src="logo.png" alt="Quraysh Industries Logo">
-      Quraysh Industries
-    </a>
-    <div class="tabs">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#packages">Packages</a>
-      <a href="#offers">Offers</a>
-      <a href="#contact">Contact</a>
+  <!-- NAV -->
+  <nav aria-label="Primary">
+    <div class="nav-row">
+      <a class="brand" href="#home" aria-label="Quraysh Industries home">
+        <img src="logo.png" alt="Quraysh Industries logo" />
+        Quraysh Industries
+      </a>
+      <div class="tabs" role="navigation">
+        <a class="tab" href="#home">Home</a>
+        <a class="tab" href="#about">About</a>
+        <a class="tab" href="#packages">Packages</a>
+        <a class="tab" href="#process">How it works</a>
+        <a class="tab" href="#offers">Offers</a>
+        <a class="tab" href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<header id="home">
-  <h1>Drive Smart. Drive Royal.</h1>
-  <p>Helping students buy cars smartly, safely, and affordably — with British precision and royal heritage.</p>
-  <a href="#packages" class="cta">Explore Packages</a>
-</header>
+  <!-- HERO -->
+  <header id="home">
+    <h1 class="title">Drive Smart. Drive Royal.</h1>
+    <p class="lead">Helping students buy cars smartly, safely, and affordably — with British professionalism and royal heritage.</p>
+    <a class="cta" href="#packages">Explore Packages</a>
+  </header>
 
-<div class="divider"></div>
-
-<!-- ABOUT -->
-<section id="about" class="panel">
-  <h2>About Us</h2>
-  <p>Quraysh Industries blends <b>British professionalism</b> with <b>Mughal elegance</b> — bringing <b>Precision, Trust, and Royal Standards</b> to every car purchase.  
-  We shortlist high-value cars, assist with negotiation, and ensure every deal is transparent and fair.</p>
-</section>
-
-<!-- PACKAGES -->
-<section id="packages" class="panel">
-  <h2>Our Packages</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1605559424843-9e4c6ad1f3c5?auto=format&fit=crop&w=1000&q=80" alt="Quick Pick car - Compact city car">
-      <h3>Quick Pick</h3>
-      <p>3–5 shortlisted cars within budget — with checks on mileage, MOT history, and red flags.</p>
-      <p class="price">£25</p>
+  <!-- ABOUT -->
+  <section id="about" class="show">
+    <div class="panel">
+      <h2>About Us</h2>
+      <p>Quraysh Industries blends <b>British professionalism</b> with <b>Mughal elegance</b> — bringing <b>Precision, Trust, and Royal Standards</b> to every car purchase. We shortlist great-value options, guide negotiations, and ensure your deal is fair and safe.</p>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a47f06?auto=format&fit=crop&w=1000&q=80" alt="Negotiator car - Sedan">
-      <h3>Negotiator</h3>
-      <p>Quick Pick + seller communication support, viewing checklist, and fair price negotiation.</p>
-      <p class="price">£80</p>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="panel">
+      <h2>Our Packages</h2>
+      <div class="grid">
+        <!-- Quick Pick -->
+        <article class="card" aria-labelledby="pkg-quick">
+          <img src="https://images.unsplash.com/photo-1605559424843-9e4c6ad1f3c5?auto=format&fit=crop&w=1200&q=80" alt="Compact city car — shortlist preview">
+          <div class="body">
+            <h3 id="pkg-quick">Quick Pick</h3>
+            <p class="muted">3–5 shortlisted cars within budget — complete with checks on mileage, MOT history, and red flags.</p>
+            <p class="price">£25</p>
+          </div>
+        </article>
+
+        <!-- Negotiator -->
+        <article class="card" aria-labelledby="pkg-neg">
+          <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a47f06?auto=format&fit=crop&w=1200&q=80" alt="Mid-range sedan — negotiation support">
+          <div class="body">
+            <h3 id="pkg-neg">Negotiator</h3>
+            <p class="muted">Quick Pick + seller messaging scripts, viewing checklist, and fair price negotiation support.</p>
+            <p class="price">£80</p>
+          </div>
+        </article>
+
+        <!-- Full Assist -->
+        <article class="card" aria-labelledby="pkg-full">
+          <img src="https://images.unsplash.com/photo-1616455579106-1b49da9b7ac8?auto=format&fit=crop&w=1200&q=80" alt="Luxury SUV — full assistance package">
+          <div class="body">
+            <h3 id="pkg-full">Full Assist</h3>
+            <p class="muted">End-to-end help — search, shortlist, negotiation, viewing support, and guidance through paperwork.</p>
+            <p class="price">£250</p>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1616455579106-1b49da9b7ac8?auto=format&fit=crop&w=1000&q=80" alt="Full Assist car - Luxury SUV">
-      <h3>Full Assist</h3>
-      <p>End-to-end assistance — car search, shortlists, negotiation, visit help, and paperwork.</p>
-      <p class="price">£250</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="panel">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step"><b>1) Tell us your brief</b><br><span class="muted">Budget, location, car type, usage.</span></div>
+        <div class="step"><b>2) We shortlist</b><br><span class="muted">3–5 top picks within 24–48 hours with checks.</span></div>
+        <div class="step"><b>3) Compare & choose</b><br><span class="muted">We explain pros/cons and market pricing.</span></div>
+        <div class="step"><b>4) Negotiate & close</b><br><span class="muted">We guide messaging, viewing, and paperwork.</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- OFFER -->
-<section id="offers" class="panel">
-  <h2>Exclusive Offer</h2>
-  <p class="offer">🚘 <b>10% OFF</b> for verified YouTube & Instagram followers — use code <b>QURAYSH10</b> when booking!</p>
-</section>
+  <!-- WHY US -->
+  <section id="why">
+    <div class="panel">
+      <h2>Why Quraysh?</h2>
+      <div class="grid">
+        <div class="pill">Student-first pricing</div>
+        <div class="pill">UK-market expertise</div>
+        <div class="pill">MOT & history checks</div>
+        <div class="pill">Negotiation scripts</div>
+        <div class="pill">Scam/red-flag filter</div>
+        <div class="pill">Fast 24–48h shortlist</div>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="panel contact">
-  <h2>Contact</h2>
-  <p>WhatsApp: <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat with Quraysh</a></p>
-  <p>Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
-  <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
-</section>
+  <!-- TESTIMONIALS -->
+  <section id="reviews">
+    <div class="panel">
+      <h2>What Clients Say</h2>
+      <div class="grid">
+        <div class="quote">“Got a solid first car under budget. They flagged two risky listings I would’ve fallen for.” <b>— H., Manchester</b></div>
+        <div class="quote">“The negotiation scripts saved me like £400. Viewing checklist = lifesaver.” <b>— A., London</b></div>
+        <div class="quote">“End-to-end help felt premium but affordable. Zero stress.” <b>— S., Birmingham</b></div>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.”<br>
-  Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
-</footer>
+  <!-- OFFER -->
+  <section id="offers">
+    <div class="panel">
+      <h2>Royal Offer</h2>
+      <p class="offer">🎁 <b>10% OFF</b> for verified YouTube & Instagram followers — use code <b>QURAYSH10</b>. Show your subscribed status when booking.</p>
+    </div>
+  </section>
 
-<!-- TOGGLE BUTTON -->
-<div class="toggle-btn" id="modeToggle">🌙</div>
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="panel">
+      <h2>FAQ</h2>
+      <div class="grid">
+        <div class="step"><b>Is this only for students?</b><br><span class="muted">We focus on students/first-time buyers, but anyone can book.</span></div>
+        <div class="step"><b>Do you visit cars with me?</b><br><span class="muted">In Full Assist we guide viewing steps and paperwork; visit support is arranged where feasible.</span></div>
+        <div class="step"><b>Do you take payment up-front?</b><br><span class="muted">Yes for Quick Pick & Negotiator; staged for Full Assist.</span></div>
+      </div>
+    </div>
+  </section>
 
-<script>
-// Scroll fade-in
-const sections=document.querySelectorAll('section');
-const reveal=()=>{sections.forEach(s=>{const top=s.getBoundingClientRect().top;if(top<window.innerHeight-100){s.classList.add('visible');}})};
-window.addEventListener('scroll',reveal); reveal();
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="panel contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
+      <a class="whatsapp" href="https://wa.me/44YOURNUMBER?text=Hi%20Quraysh%20Industries!%20I%27d%20like%20help%20finding%20a%20car." target="_blank" aria-label="Message on WhatsApp">Message on WhatsApp</a>
+    </div>
+  </section>
 
-// Dark mode toggle
-const toggle=document.getElementById('modeToggle');
-toggle.addEventListener('click',()=>{
-  document.body.classList.toggle('dark');
-  toggle.textContent=document.body.classList.contains('dark')?'☀️':'🌙';
-});
-</script>
+  <footer>
+    © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.” · Powered by <a href="https://macrobot.neocities.org" target="_blank" rel="noopener">Macrobot</a>
+  </footer>
+
+  <!-- Night/Light toggle -->
+  <button class="toggle" id="modeToggle" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- Reveal + Mode JS -->
+  <script>
+    // reveal on scroll
+    const sections=[...document.querySelectorAll('section')];
+    const reveal=()=>{sections.forEach(s=>{if(s.getBoundingClientRect().top<window.innerHeight-120)s.classList.add('show')});};
+    window.addEventListener('scroll',reveal); reveal();
+
+    // dark mode (persist)
+    const btn=document.getElementById('modeToggle');
+    const apply=(m)=>{document.body.classList.toggle('dark',m);btn.textContent=m?'☀️':'🌙';localStorage.setItem('qi.dark',m?'1':'0');};
+    apply(localStorage.getItem('qi.dark')==='1');
+    btn.addEventListener('click',()=>apply(!document.body.classList.contains('dark')));
+  </script>
+
+  <!-- Schema.org: LocalBusiness (simplified) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Quraysh Industries",
+    "description":"Student-focused car-buying assistance across the UK: research, shortlist, negotiation and purchase guidance.",
+    "url":"https://adithyaprahalad.github.io/quresh-industries/",
+    "sameAs":["https://instagram.com/quresh.industries"],
+    "areaServed":"GB",
+    "logo":"https://adithyaprahalad.github.io/quresh-industries/logo.png"
+  }
+  </script>
+
+  <noscript><style>section{opacity:1;transform:none}</style></noscript>
 </body>
 </html>

@@ -1,321 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quraysh Industries — Drive Smart. Drive Royal.</title>
-<link rel="icon" href="logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-<meta name="color-scheme" content="light dark">
-
-<style>
-:root {
-  --gold: #caa548;
-  --dark-gold: #b58c2a;
-  --black: #0d0d0d;
-  --ivory: #faf9f6;
-  --gray: #e9e9e9;
-  --charcoal: #121212;
-  --radius: 18px;
-  --shadow: 0 6px 24px rgba(0,0,0,0.15);
-  --transition: 0.4s cubic-bezier(.25,.1,.25,1);
-}
-
-/* RESET */
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--ivory);
-  color:var(--black);
-  line-height:1.6;
-  transition:background var(--transition),color var(--transition);
-}
-
-/* NAV */
-nav {
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,0.8);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--gold);
-  box-shadow:0 2px 15px rgba(0,0,0,0.05);
-}
-.nav-wrap {
-  max-width:1200px;margin:auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px 22px;
-}
-.brand {
-  display:flex;align-items:center;gap:12px;
-  font-family:'Playfair Display',serif;
-  font-size:1.45rem;font-weight:700;
-  text-decoration:none;color:var(--black);
-  letter-spacing:0.3px;
-}
-.brand img {
-  height:40px;width:auto;
-  filter:drop-shadow(0 0 6px rgba(202,165,72,0.5));
-}
-.nav-links a {
-  text-decoration:none;
-  color:var(--black);
-  margin-left:24px;
-  font-weight:500;
-  transition:color 0.3s;
-}
-.nav-links a:hover {color:var(--gold);}
-
-/* HERO */
-header {
-  position:relative;
-  text-align:center;
-  padding:140px 20px 120px;
-  overflow:hidden;
-  background:linear-gradient(180deg,var(--ivory) 0%,#f5f5f5 100%);
-}
-header::before {
-  content:"";
-  position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 30%,rgba(202,165,72,0.15),transparent 60%);
-  animation:pulse 8s infinite alternate ease-in-out;
-}
-@keyframes pulse {
-  from{opacity:.4;transform:scale(1);}
-  to{opacity:.8;transform:scale(1.05);}
-}
-header h1 {
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  font-weight:700;
-  letter-spacing:0.4px;
-  color:var(--black);
-  margin-bottom:14px;
-}
-header p {
-  max-width:640px;
-  margin:auto;
-  color:#444;
-  font-size:1.05rem;
-}
-.cta {
-  margin-top:30px;
-  display:inline-block;
-  padding:13px 32px;
-  border-radius:50px;
-  background:linear-gradient(90deg,var(--gold),var(--dark-gold));
-  color:#111;
-  text-decoration:none;
-  font-weight:600;
-  transition:transform .3s,box-shadow .3s;
-  box-shadow:0 8px 24px rgba(202,165,72,.35);
-}
-.cta:hover {transform:translateY(-3px);box-shadow:0 10px 30px rgba(202,165,72,.45);}
-
-/* SCROLL SECTIONS */
-section {
-  max-width:1100px;margin:100px auto;padding:0 20px;
-  opacity:0;transform:translateY(40px);
-  transition:opacity .8s,transform .8s;
-}
-section.show {opacity:1;transform:none;}
-h2 {
-  font-family:'Playfair Display',serif;
-  font-size:1.9rem;
-  margin-bottom:24px;
-  text-align:center;
-  color:var(--black);
-}
-
-/* ABOUT */
-.about {
-  text-align:center;
-  background:var(--gray);
-  border-left:4px solid var(--gold);
-  border-radius:var(--radius);
-  padding:40px;
-  box-shadow:var(--shadow);
-}
-.about p {
-  color:#333;
-  max-width:780px;
-  margin:auto;
-  font-size:1.05rem;
-}
-
-/* ICON GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  margin-top:35px;
-}
-.card {
-  background:var(--ivory);
-  border:1px solid rgba(0,0,0,0.08);
-  border-radius:var(--radius);
-  text-align:center;
-  padding:38px 22px;
-  box-shadow:0 4px 24px rgba(0,0,0,0.05);
-  transition:transform .3s,box-shadow .3s;
-}
-.card:hover {
-  transform:translateY(-8px);
-  box-shadow:0 10px 36px rgba(202,165,72,.25);
-}
-.icon {
-  color:var(--gold);
-  margin-bottom:18px;
-  font-size:2.6rem;
-  animation:float 3s ease-in-out infinite alternate;
-}
-@keyframes float {to{transform:translateY(-8px);}}
-
-/* CONTACT */
-.contact {
-  text-align:center;
-}
-.contact a {
-  color:var(--gold);
-  text-decoration:none;
-  font-weight:600;
-}
-.contact a:hover {text-decoration:underline;}
-.contact p {margin:6px 0;}
-
-/* FOOTER */
-footer {
-  background:var(--black);
-  color:#fff;
-  text-align:center;
-  padding:30px 15px;
-  border-top:1px solid var(--gold);
-  font-size:.9rem;
-}
-footer a {color:var(--gold);text-decoration:none;}
-footer a:hover {color:var(--dark-gold);}
-
-/* DARK MODE */
-.toggle {
-  position:fixed;right:18px;bottom:18px;
-  width:48px;height:48px;border-radius:50%;
-  background:var(--black);
-  border:2px solid var(--gold);
-  color:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  transition:background .3s,color .3s,transform .3s;
-  font-size:20px;
-}
-.toggle:hover {background:var(--gold);color:var(--black);}
-body.dark {
-  background:var(--charcoal);color:#eee;
-}
-body.dark nav {background:rgba(18,18,18,0.9);border-bottom:1px solid var(--dark-gold);}
-body.dark header {background:linear-gradient(180deg,#0f0f0f 0%,#181818 100%);}
-body.dark .about, body.dark .card {background:#1a1a1a;border-color:rgba(255,255,255,0.05);}
-body.dark footer {background:#000;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quraysh Industries — Drive Smart. Drive Royal.</title>
+  <link rel="icon" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root {
+      --gold: #caa548;
+      --dark-gold: #b58c2a;
+      --black: #0d0d0d;
+      --ivory: #faf9f6;
+      --gray: #e9e9e9;
+      --charcoal: #121212;
+      --radius: 14px;
+      --shadow: 0 6px 24px rgba(0,0,0,0.15);
+      --transition: 0.4s cubic-bezier(.25,.1,.25,1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body {
+      font-family:'Inter',sans-serif;
+      background: var(--ivory);
+      color: var(--black);
+      line-height:1.6;
+      transition: background var(--transition), color var(--transition);
+    }
+    nav {
+      position: sticky;
+      top:0;
+      z-index:100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gold);
+    }
+    .nav-wrap {
+      max-width: 1200px;
+      margin: auto;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-family:'Playfair Display', serif;
+      font-size:1.4rem;
+      font-weight:700;
+      text-decoration:none;
+      color: var(--black);
+      letter-spacing: 0.3px;
+    }
+    .brand img {
+      height: 36px;
+      width: auto;
+      filter: drop-shadow(0 0 6px rgba(202,165,72,0.5));
+    }
+    .nav-links a {
+      text-decoration:none;
+      color: var(--black);
+      margin-left: 24px;
+      font-weight:500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    header {
+      position: relative;
+      text-align:center;
+      padding: 120px 20px 100px;
+      overflow:hidden;
+      background: linear-gradient(180deg, var(--ivory) 0%, #f5f5f5 100%);
+    }
+    header::before {
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(circle at 50% 30%, rgba(202,165,72,0.15), transparent 60%);
+      animation: pulse 8s infinite alternate ease-in-out;
+    }
+    @keyframes pulse {
+      from {opacity:0.4; transform:scale(1);}
+      to   {opacity:0.8; transform:scale(1.05);}
+    }
+    header h1 {
+      font-family:'Playfair Display', serif;
+      font-size:3.0rem;
+      font-weight:700;
+      letter-spacing:0.4px;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+    header p {
+      max-width: 680px;
+      margin: auto;
+      color: #444;
+      font-size:1.05rem;
+    }
+    .cta {
+      margin-top:30px;
+      display:inline-block;
+      padding: 15px 36px;
+      border-radius:50px;
+      background: linear-gradient(90deg, var(--gold), var(--dark-gold));
+      color: #111;
+      text-decoration:none;
+      font-weight:600;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 8px 24px rgba(202,165,72,0.35);
+    }
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(202,165,72,0.45);
+    }
+    section {
+      max-width:1100px;
+      margin: 100px auto;
+      padding: 0 20px;
+      opacity:0;
+      transform: translateY(40px);
+      transition: opacity .8s, transform .8s;
+    }
+    section.show {opacity:1; transform:none;}
+    h2 {
+      font-family:'Playfair Display', serif;
+      font-size:1.9rem;
+      margin-bottom:24px;
+      text-align:center;
+      color: var(--black);
+    }
+    .about {
+      text-align:center;
+      background: var(--gray);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .about p {
+      color: #333;
+      max-width: 780px;
+      margin: auto;
+      font-size:1.05rem;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:30px;
+      margin-top:35px;
+    }
+    .card {
+      background: var(--ivory);
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius: var(--radius);
+      text-align:center;
+      padding: 38px 22px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 36px rgba(202,165,72,0.25);
+    }
+    .icon {
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-size:2.6rem;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+    @keyframes float { to { transform: translateY(-8px);} }
+    .contact {
+      text-align:center;
+    }
+    .contact a {
+      color: var(--gold);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: var(--black);
+      color: #fff;
+      text-align:center;
+      padding: 30px 15px;
+      border-top:1px solid var(--gold);
+      font-size:.9rem;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration:none;
+    }
+    footer a:hover {
+      color: var(--dark-gold);
+    }
+    .toggle {
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:48px;height:48px;
+      border-radius:50%;
+      background: var(--black);
+      border:2px solid var(--gold);
+      color: var(--gold);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: background .3s, color .3s, transform .3s;
+      font-size:20px;
+      z-index:200;
+    }
+    .toggle:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    body.dark {
+      background: var(--charcoal);
+      color: #eee;
+    }
+    body.dark nav {
+      background: rgba(18,18,18,0.9);
+      border-bottom:1px solid var(--dark-gold);
+    }
+    body.dark header {
+      background: linear-gradient(180deg, #0f0f0f 0%, #181818 100%);
+    }
+    body.dark .about, body.dark .card {
+      background: #1a1a1a;
+      border-color: rgba(255,255,255,0.05);
+    }
+    body.dark footer {
+      background: #000;
+    }  
+  </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-wrap">
-    <a href="#home" class="brand"><img src="logo.png" alt="Quraysh Logo"> Quraysh Industries</a>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#packages">Packages</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
+  <nav>
+    <div class="nav-wrap">
+      <a href="#home" class="brand"><img src="logo.png" alt="Logo"> Quraysh Industries</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<header id="home">
-  <h1>Drive Smart. Drive Royal.</h1>
-  <p>The art of automotive guidance — blending modern engineering precision with timeless heritage.</p>
-  <a href="#packages" class="cta">Discover Packages</a>
-</header>
+  <header id="home">
+    <h1>Drive Smart. Drive Royal.</h1>
+    <p>The art of automotive guidance — blending modern engineering precision with timeless heritage.</p>
+    <a href="#packages" class="cta">Discover Packages</a>
+  </header>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about">
-    <h2>About Quraysh</h2>
-    <p>Quraysh Industries redefines how students and first-time buyers find cars in the UK.  
-    We combine <b>data-driven shortlisting</b>, <b>fair price negotiation</b>, and <b>luxury-grade support</b> — all crafted around our principle of Royal Precision.</p>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<section id="packages">
-  <h2>Our Packages</h2>
-  <div class="grid">
-    <div class="card">
-      <i data-lucide="list" class="icon"></i>
-      <h3>Quick Pick</h3>
-      <p>Curated shortlist of verified cars within budget — delivered within 48 hours.</p>
-      <p style="color:#0f5132;font-weight:700;">£25</p>
+  <section id="about">
+    <div class="about">
+      <h2>About Quraysh</h2>
+      <p>Quraysh Industries redefines how students and first-time buyers find cars in the UK. We combine <b>data-driven shortlisting</b>, <b>fair price negotiation</b>, and <b>luxury-grade support</b> — all crafted around our principle of Royal Precision.</p>
     </div>
-    <div class="card">
-      <i data-lucide="handshake" class="icon"></i>
-      <h3>Negotiator</h3>
-      <p>Expert support during communication and viewing — ensuring you never overpay.</p>
-      <p style="color:#0f5132;font-weight:700;">£80</p>
+  </section>
+
+  <section id="packages">
+    <h2>Our Packages</h2>
+    <div class="grid">
+      <div class="card">
+        <i data-lucide="list" class="icon"></i>
+        <h3>Quick Pick</h3>
+        <p>Curated shortlist of verified cars within budget — delivered within 48 hours.</p>
+        <p style="color:#0f5132;font-weight:700;">£25</p>
+      </div>
+      <div class="card">
+        <i data-lucide="handshake" class="icon"></i>
+        <h3>Negotiator</h3>
+        <p>Expert support during communication and viewing — ensuring you never overpay.</p>
+        <p style="color:#0f5132;font-weight:700;">£80</p>
+      </div>
+      <div class="card">
+        <i data-lucide="crown" class="icon"></i>
+        <h3>Full Assist</h3>
+        <p>Our signature service — full buying guidance, checklist, and paperwork review.</p>
+        <p style="color:#0f5132;font-weight:700;">£250</p>
+      </div>
     </div>
-    <div class="card">
-      <i data-lucide="crown" class="icon"></i>
-      <h3>Full Assist</h3>
-      <p>Our signature service — full buying guidance, checklist, and paperwork review.</p>
-      <p style="color:#0f5132;font-weight:700;">£250</p>
+  </section>
+
+  <section id="why">
+    <h2>Why Quraysh</h2>
+    <div class="grid">
+      <div class="card">
+        <i data-lucide="award" class="icon"></i><h3>Integrity</h3><p>Every deal is transparent — our loyalty lies with you, not the seller.</p>
+      </div>
+      <div class="card">
+        <i data-lucide="clock" class="icon"></i><h3>Efficiency</h3><p>From brief to shortlist in under 48 hours — speed without compromise.</p>
+      </div>
+      <div class="card">
+        <i data-lucide="shield" class="icon"></i><h3>Trust</h3><p>UK-based professionals with verifiable experience and verified partners.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY US -->
-<section id="why">
-  <h2>Why Quraysh</h2>
-  <div class="grid">
-    <div class="card"><i data-lucide="award" class="icon"></i><h3>Integrity</h3><p>Every deal is transparent — our loyalty lies with you, not the seller.</p></div>
-    <div class="card"><i data-lucide="clock" class="icon"></i><h3>Efficiency</h3><p>From brief to shortlist in under 48 hours — speed without compromise.</p></div>
-    <div class="card"><i data-lucide="shield" class="icon"></i><h3>Trust</h3><p>UK-based professionals with verifiable experience and verified partners.</p></div>
-  </div>
-</section>
+  <section id="contact">
+    <div class="about contact">
+      <h2>Contact</h2>
+      <p>Email — <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
+      <p>Instagram — <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
+      <p>WhatsApp — <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat Now</a></p>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="about contact">
-    <h2>Contact</h2>
-    <p>Email — <a href="mailto:qureshindustries@gmail.com">qureshindustries@gmail.com</a></p>
-    <p>Instagram — <a href="https://instagram.com/quresh.industries" target="_blank">@quresh.industries</a></p>
-    <p>WhatsApp — <a href="https://wa.me/44YOURNUMBER" target="_blank">Chat Now</a></p>
-  </div>
-</section>
+  <footer>
+    © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.” | Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  © 2025 Quraysh Industries — “Precision. Trust. Royal Standards.” | Powered by <a href="https://macrobot.neocities.org" target="_blank">Macrobot</a>
-</footer>
+  <div class="toggle" id="modeToggle">🌙</div>
 
-<!-- DARK MODE TOGGLE -->
-<div class="toggle" id="modeToggle">🌙</div>
-
-<script>
-lucide.createIcons();
-
-// reveal animation
-const sections=document.querySelectorAll('section');
-const reveal=()=>sections.forEach(s=>{if(s.getBoundingClientRect().top<window.innerHeight-120)s.classList.add('show')});
-window.addEventListener('scroll',reveal);reveal();
-
-// dark mode
-const btn=document.getElementById('modeToggle');
-const apply=m=>{document.body.classList.toggle('dark',m);btn.textContent=m?'☀️':'🌙';localStorage.setItem('qi.dark',m?'1':'0')};
-apply(localStorage.getItem('qi.dark')==='1');
-btn.onclick=()=>apply(!document.body.classList.contains('dark'));
-</script>
+  <script>
+    lucide.createIcons();
+    const sections = document.querySelectorAll('section');
+    const reveal = () => {
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top < window.innerHeight - 120) {
+          s.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+    const btn = document.getElementById('modeToggle');
+    const apply = (m) => {
+      document.body.classList.toggle('dark', m);
+      btn.textContent = m ? '☀️' : '🌙';
+      localStorage.setItem('qi.dark', m ? '1' : '0');
+    };
+    apply(localStorage.getItem('qi.dark') === '1');
+    btn.onclick = () => {
+      apply(!document.body.classList.contains('dark'));
+    };
+  </script>
 </body>
 </html>
